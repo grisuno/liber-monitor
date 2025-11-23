@@ -1,1 +1,12 @@
+# liber-monitor v1.0.0 - Dependencias principales
+torch>=1.9.0
+numpy>=1.21.0
+matplotlib>=3.3.0
 
+# Dependencias de desarrollo (para tests)
+pytest>=6.0
+pytest-cov
+
+# Dependencias para experimentos
+torchvision>=0.10.0
+networkx>=2.6
