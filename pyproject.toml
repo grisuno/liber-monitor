@@ -1,0 +1,57 @@
+[build-system]
+requires = ["setuptools>=45", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "liber-monitor"
+version = "1.0.0"
+description = "Geometric diagnostic tool for neural networks"
+readme = "README.md"
+requires-python = ">=3.7"
+license = {text = "GPL-3.0"}
+authors = [
+    {name = "RESMA Project", email = "contact@resma.ai"}
+]
+keywords = ["neural-networks", "overfitting", "monitoring", "geometry", "entropy"]
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: GNU General Public License v3 (GPLv3)",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+
+dependencies = [
+    "torch>=1.9.0",
+    "numpy>=1.21.0",
+    "matplotlib>=3.3.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=6.0",
+    "pytest-cov",
+]
+experiments = [
+    "torchvision>=0.10.0",
+]
+
+[project.urls]
+Homepage = "https://github.com/grisuno/liber-monitor"
+Documentation = "https://github.com/grisuno/liber-monitor#readme"
+Repository = "https://github.com/grisuno/liber-monitor.git"
+Issues = "https://github.com/grisuno/liber-monitor/issues"
+Research = "https://github.com/grisuno/resma"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["liber_monitor*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]
+python_classes = ["Test*"]
+python_functions = ["test_*"]
+addopts = "-v --tb=short"
