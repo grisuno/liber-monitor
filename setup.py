@@ -12,7 +12,7 @@ with open("README.md", "r", encoding="utf-8") as fh:
 
 setup(
     name="liber-monitor",
-    version="1.0.0",
+    version="2.0.0",
     author="RESMA Project",
     author_email="contact@resma.ai",
     description="Geometric diagnostic tool for neural networks - Detect overfitting 2-3 epochs early",
