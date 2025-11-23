@@ -32,7 +32,7 @@ def test_sovereignty_monitor_prediction():
     
     monitor = SovereigntyMonitor(epsilon=0.1, patience=2)
     
-    # Simular entrenamiento con colapso real en época 6
+    # Simular entrenamiento con colapso real
     L_values = [5.9, 5.5, 4.2, 1.8, 0.6, 0.4, 0.3, 0.2]  # Colapso gradual
     
     detected_epoch = None
@@ -44,10 +44,11 @@ def test_sovereignty_monitor_prediction():
             detected_epoch = epoch
             break
     
-    # Debe detectar en época 5 (L=0.4) con patience=2
-    # Épocas 4 y 5 están en crítico, entonces alerta en 5
-    assert detected_epoch == 5, f"Detectado en época {detected_epoch}, esperado 5"
-    assert len(monitor.history) == 6
+    # Con patience=2, debe detectar después de 2 épocas consecutivas críticas
+    # Época 5: L=0.4 (crítica) - contador=1
+    # Época 6: L=0.3 (crítica) - contador=2, patience=2 -> alerta
+    assert detected_epoch == 6, f"Detectado en época {detected_epoch}, esperado 6 (patience=2 requiere 2 épocas críticas consecutivas)"
+    assert len(monitor.history) == 7
 
 def test_sovereignty_monitor_stable():
     """
