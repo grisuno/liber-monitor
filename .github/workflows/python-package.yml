@@ -26,17 +26,17 @@ jobs:
         python-version: ${{ matrix.python-version }}
     - name: Install dependencies
       run: |
+        # 1. Actualiza pip
         python -m pip install --upgrade pip
-        # Instala el paquete local y sus dependencias de desarrollo usando [dev]
-        # Esto instala el paquete 'liber-monitor' que Pytest necesita importar.
+        
+        # 2. Instala el paquete local y sus dependencias de desarrollo ([dev])
         python -m pip install .[dev]
         
-        # El linter y pytest ya están incluidos en [project.optional-dependencies].dev
-        # pero es bueno verificar si flake8 no está instalado. Si usas 'pip install .[dev]',
-        # estas dos líneas de abajo ya no son estrictamente necesarias si están en tu pyproject.toml
-        # python -m pip install flake8 pytest
+        # 3. Instala flake8 explícitamente para asegurar que el comando esté disponible
+        # Aunque [dev] probablemente ya lo incluye, instalarlo explícitamente elimina dudas.
+        python -m pip install flake8
         
-        # Mantenemos esta línea si es que tienes un requirements.txt adicional
+        # 4. Instala cualquier requerimiento adicional
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
     - name: Lint with flake8
       run: |
