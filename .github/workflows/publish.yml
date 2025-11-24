@@ -30,13 +30,19 @@ jobs:
         with:
           python-version: "3.x" # Usa una versión de Python compatible (ej. 3.x)
 
-      # C. Install dependencies: Instalar 'build' para crear el paquete
-      - name: Install build dependencies
-        run: python -m pip install build
+      # Paso C. Instalar el paquete y dependencias de prueba
+      - name: Install dependencies and package
+        run: |
+          # 1. Instalar las dependencias del proyecto y las de prueba (dev)
+          # Esto usa el archivo pyproject.toml para encontrar las dependencias.
+          python -m pip install .[dev]
 
-      # D. Build: Crear los archivos de distribución (.whl y .tar.gz)
-      - name: Build sdist and wheel
-        run: python -m build
+          # 2. Verificar la instalación (Opcional, pero útil para depurar)
+          python -m pip list
+          
+      # Paso D. Ejecutar Pytest (Esto asumo que ya lo tienes)
+      - name: Run tests with pytest
+        run: pytest
 
       # E. Publish: Subir el paquete a TestPyPI
       - name: Publish distribution to TestPyPI
