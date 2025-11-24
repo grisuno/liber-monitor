@@ -1,6 +1,67 @@
-# liber-monitor v1.0.0
-
 <img width="1024" height="1024" alt="image" src="https://github.com/user-attachments/assets/0d9b8941-0ef6-4df9-8b71-59c4ef09b062" />
+
+# Liber Monitor
+
+[EN]
+
+**TL;DR**: Detects neural network overfitting 2-3 epochs early using 
+geometric entropy. 200 lines. NumPy only. Works now.
+
+## The 30-second pitch
+
+Traditional metrics (loss, accuracy) are **lagging indicators**. 
+They tell you overfitting happened *after* it happened.
+
+L metric is a **leading indicator**. It detects structural collapse 
+before performance degrades.
+
+## Show me
+
+[https://huggingface.co/spaces/grisun0/liber-monitor-demo](https://huggingface.co/spaces/grisun0/liber-monitor-demo)
+
+## Install & Use
+```python
+pip install --index-url https://test.pypi.org/simple/ liber-monitor
+
+from liber_monitor import singular_entropy, regime
+
+L = singular_entropy(your_model)
+status = regime(L)  # 'healthy', 'warning', or 'critical'
+
+if status == 'critical':
+    print("Stop training NOW")
+```
+
+## Why it works
+
+[https://github.com/grisuno/resma](https://github.com/grisuno/resma)
+
+## Where it came from
+
+This tool emerged from RESMA research exploring quantum-geometric 
+approaches to ML. You don't need to understand (or believe) the 
+theory to use it.
+
+Full backstory: [github.com/grisuno/resma]
+
+## License
+
+GPL v3 - Use freely, share openly, audit publicly.
+
+I built a neural network health monitor that detects 
+overfitting 2-3 epochs before traditional metrics.
+
+Math: von Neumann entropy on weight manifolds
+Code: 200 lines of NumPy
+License: GPL v3
+Demo: [https://huggingface.co/spaces/grisun0/liber-monitor-demo](https://huggingface.co/spaces/grisun0/liber-monitor-demo)
+
+Born from a weekend physics experiment. 
+Let's see if it's useful or just a fancy paperweight.
+
+#MachineLearning #OpenSource
+
+[ES]
 
 **Detección geométrica de overfitting 2-3 épocas antes que val_loss.**
 
