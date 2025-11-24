@@ -46,7 +46,7 @@ def run():
     # Setup
     torch.manual_seed(42)
     model = ModeloMNISTPequeno()
-    monitor = SovereigntyMonitor(epsilon=0.1, patience=2)
+    monitor = SovereigntyMonitor(epsilon_c=0.1, patience=2)
     optimizer = optim.Adam(model.parameters(), lr=0.01)
     
     # Datos tóxicos (exactos de tu experimento)
@@ -84,13 +84,11 @@ def run():
         
         min_val_loss = min(min_val_loss, val_loss)
         
-        monitor.history[-1]["val_loss"] = val_loss
-        
         if epoch % 3 == 0 or epoch == 14:
-            print(f"Ep {epoch:2d} | Loss: {val_loss:.4f} | L: {L:.3f} | {monitor.regime(L)}")
+            print(f"Ep {epoch:2d} | Loss: {val_loss:.4f} | L: {L:.3f} | {monitor.evaluar_regimen(L)}")
     
     # Validación final
-    validation = validate_early_stopping(monitor.history, overfitting_epoch, threshold=0.5)
+    validation = validate_early_stopping(monitor.history, threshold_L=0.5)
     
     print("\n" + "="*60)
     print("🏁 RESULTADO FINAL")
@@ -104,8 +102,8 @@ def run():
     
     # Graficar
     if monitor.history:
-        epochs = [h["epoch"] for h in monitor.history]
-        L_values = [h["L"] for h in monitor.history]
+        epochs = [h.epoch for h in monitor.history]
+        L_values = [h.L_promedio for h in monitor.history]
         
         plt.figure(figsize=(10, 6))
         plt.plot(epochs, L_values, 'purple', linewidth=2.5)
