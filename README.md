@@ -134,6 +134,7 @@ Corre `python examples/quick_demo.py` para veer la salida simulada. El entrenami
 ## Links
 
 [https://test.pypi.org/project/liber-monitor/](https://test.pypi.org/project/liber-monitor/)
+[https://huggingface.co/spaces/grisun0/liber-monitor-demo](https://huggingface.co/spaces/grisun0/liber-monitor-demo)
 
 ## Licencia
 GPL v3 - Usa, modifica, comparte libremente.
