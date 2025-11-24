@@ -18,7 +18,7 @@ jobs:
   build-and-publish:
     name: Build and publish Python distribution to TestPyPI
     runs-on: ubuntu-latest
-
+    environment: testpypi
     steps:
       # A. Checkout: Obtener el código de tu repositorio
       - name: Checkout repository
