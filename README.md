@@ -123,6 +123,10 @@ export_report(monitor.history, "my_model", "report.json")
 - L colapsa en época 14 (crítico)
 - Deterioro gradual detectado en época 8 ✅
 
+## Demo rápida
+
+Corre `python examples/quick_demo.py` para veer la salida simulada. El entrenamiento real muestra el mismo patrón.
+
 ## Licencia
 GPL v3 - Usa, modifica, comparte libremente.
 Si usas esta herramienta en investigación, cita el trabajo original:
