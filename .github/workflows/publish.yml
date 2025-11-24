@@ -1,0 +1,53 @@
+name: Publish Python Package
+
+# 1. Define cuándo se ejecutará este workflow
+on:
+  release:
+    # Este workflow se ejecutará cuando se publique una nueva 'release'
+    types: [published]
+  # También puedes añadir un 'workflow_dispatch' para ejecutarlo manualmente
+  # workflow_dispatch:
+
+# Permisos necesarios para interactuar con GitHub Actions y OpenID Connect
+permissions:
+  contents: read
+  id-token: write # Permiso necesario para la autenticación en PyPI/TestPyPI
+
+# 2. Define los 'jobs' (trabajos) a ejecutar
+jobs:
+  build-and-publish:
+    name: Build and publish Python distribution to TestPyPI
+    runs-on: ubuntu-latest
+
+    steps:
+      # A. Checkout: Obtener el código de tu repositorio
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      # B. Setup Python: Configurar el entorno de Python
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.x" # Usa una versión de Python compatible (ej. 3.x)
+
+      # C. Install dependencies: Instalar 'build' para crear el paquete
+      - name: Install build dependencies
+        run: python -m pip install build
+
+      # D. Build: Crear los archivos de distribución (.whl y .tar.gz)
+      - name: Build sdist and wheel
+        run: python -m build
+
+      # E. Publish: Subir el paquete a TestPyPI
+      - name: Publish distribution to TestPyPI
+        uses: pypa/gh-action-pypi-publish@release/v1
+        with:
+          # Para publicar en TestPyPI, debes usar este repositorio:
+          repository-url: https://test.pypi.org/legacy/
+          # Usa el secreto de GitHub llamado 'PYPI_TOKEN' que debes crear.
+          # Reemplaza 'TEST_PYPI_API_TOKEN' con el nombre de tu secreto
+          # El valor debe ser tu token de API de TestPyPI.
+          password: ${{ secrets.TEST_PYPI_API_TOKEN }}
+          # Opcional: Si usas la autenticación OpenID Connect (OIDC),
+          # reemplaza 'password' con: trusted-publisher: true
+          # trusted-publisher: true
