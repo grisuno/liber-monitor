@@ -43,7 +43,10 @@ jobs:
       # Paso D. Ejecutar Pytest (Esto asumo que ya lo tienes)
       - name: Run tests with pytest
         run: pytest
-
+      # D.1 Compilación: Crear los archivos de distribución (.whl y .tar.gz)
+      # Esto crea la carpeta 'dist/' que la acción de publicación necesita.
+      - name: Build sdist and wheel
+        run: python -m pip install build && python -m build
       # E. Publish: Subir el paquete a TestPyPI
       - name: Publish distribution to TestPyPI
         uses: pypa/gh-action-pypi-publish@release/v1
