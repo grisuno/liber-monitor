@@ -18,12 +18,14 @@ git clone https://github.com/grisuno/liber-monitor
 cd liber-monitor
 
 # Instalar en modo desarrollo
-pip install -e .[experiments]
+pip3 install -e .[experiments]
+or
+pip3 install --index-url https://test.pypi.org/simple/ --extra-index-url https://pypi.org/simple/ liber-monitor
 
 # Ejecutar experimentos
-python experiments/01_ultra_fast.py
-python experiments/02_complete_mnist.py
-python experiments/03_forced_collapse.py
+python3 experiments/01_ultra_fast.py
+python3 experiments/02_complete_mnist.py
+python3 experiments/03_forced_collapse.py
 
 # Ejecutar tests
 pytest tests/ -v
@@ -126,6 +128,10 @@ export_report(monitor.history, "my_model", "report.json")
 ## Demo rápida
 
 Corre `python examples/quick_demo.py` para veer la salida simulada. El entrenamiento real muestra el mismo patrón.
+
+## Links
+
+[https://test.pypi.org/project/liber-monitor/](https://test.pypi.org/project/liber-monitor/)
 
 ## Licencia
 GPL v3 - Usa, modifica, comparte libremente.
