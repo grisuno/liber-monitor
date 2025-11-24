@@ -1,5 +1,7 @@
 # liber-monitor v1.0.0
 
+<img width="1024" height="1024" alt="image" src="https://github.com/user-attachments/assets/0d9b8941-0ef6-4df9-8b71-59c4ef09b062" />
+
 **Detección geométrica de overfitting 2-3 épocas antes que val_loss.**
 
 ## Validación Empírica (3 Experimentos)
