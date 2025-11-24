@@ -193,7 +193,7 @@ def plot_training_dynamics(history: List[Dict],
     print(f"📊 Gráfico guardado en: {save_path}")
     plt.close()
 
-def validate_early_stopping(history: List[Dict],
+def validate_early_stopping(history: List[object],
                            loss_val: Optional[List[float]] = None,
                            threshold_L: float = 0.5,
                            threshold_loss_increase: float = 0.10) -> Dict:
@@ -218,9 +218,9 @@ def validate_early_stopping(history: List[Dict],
     L_cross_value = None
     
     for h in history:
-        if h["L_promedio"] < threshold_L:
-            L_cross_epoch = h["epoch"]
-            L_cross_value = h["L_promedio"]
+        if h.L_promedio < threshold_L:
+            L_cross_epoch = h.epoch
+            L_cross_value = h.L_promedio
             break
     
     # Detectar overfitting en val_loss (si está disponible)
@@ -247,6 +247,9 @@ def validate_early_stopping(history: List[Dict],
     
     # Construir reporte
     report = {
+        "valid": L_cross_epoch is not None,
+        "message": "",
+        "anticipation_epochs": 0,
         "L_analysis": {
             "cross_detected": L_cross_epoch is not None,
             "cross_epoch": L_cross_epoch,
@@ -259,13 +262,13 @@ def validate_early_stopping(history: List[Dict],
             "value": round(overfitting_value, 4) if overfitting_value else None,
             "threshold_increase": threshold_loss_increase
         },
-        "predictive_power": {},
-        "conclusion": ""
+        "predictive_power": {}
     }
     
     # Analizar poder predictivo
     if L_cross_epoch is not None and overfitting_epoch is not None:
         anticipation = overfitting_epoch - L_cross_epoch
+        report["anticipation_epochs"] = anticipation
         
         report["predictive_power"] = {
             "valid": anticipation > 0,
@@ -274,32 +277,32 @@ def validate_early_stopping(history: List[Dict],
         }
         
         if anticipation > 0:
-            report["conclusion"] = (
+            report["message"] = (
                 f"✅ ÉXITO: L predijo el colapso {anticipation} épocas ANTES del overfitting visible. "
                 f"Esto confirma la hipótesis de RESMA sobre detección temprana."
             )
         else:
-            report["conclusion"] = (
+            report["message"] = (
                 f"⚠️ RESULTADO MIXTO: L detectó el colapso pero no antes del overfitting "
                 f"(diferencia: {anticipation} épocas)."
             )
     
     elif L_cross_epoch is not None:
-        report["conclusion"] = (
+        report["message"] = (
             f"🔮 L detectó colapso en época {L_cross_epoch}, "
             f"pero no se observó overfitting claro en val_loss. "
             f"Esto sugiere que L es más sensible a deterioro interno."
         )
     
     elif overfitting_epoch is not None:
-        report["conclusion"] = (
+        report["message"] = (
             f"⚠️ Se detectó overfitting en época {overfitting_epoch}, "
             f"pero L no cruzó el umbral crítico. "
             f"Considerar ajustar umbrales o aumentar épocas de monitoreo."
         )
     
     else:
-        report["conclusion"] = (
+        report["message"] = (
             f"✅ No se detectó colapso en L ni overfitting en val_loss. "
             f"El modelo mantuvo capacidad de generalización."
         )
