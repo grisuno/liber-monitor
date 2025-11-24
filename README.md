@@ -34,7 +34,8 @@ if status == 'critical':
 
 ## Why it works
 
-[https://github.com/grisuno/resma](https://github.com/grisuno/resma)
+- [https://deepwiki.com/grisuno/liber-monitor](https://deepwiki.com/grisuno/liber-monitor)
+- [https://github.com/grisuno/resma](https://github.com/grisuno/resma)
 
 ## Where it came from
 
@@ -196,6 +197,7 @@ Corre `python examples/quick_demo.py` para veer la salida simulada. El entrenami
 
 - [https://test.pypi.org/project/liber-monitor/](https://test.pypi.org/project/liber-monitor/)
 - [https://huggingface.co/spaces/grisun0/liber-monitor-demo](https://huggingface.co/spaces/grisun0/liber-monitor-demo)
+- [https://deepwiki.com/grisuno/liber-monitor](https://deepwiki.com/grisuno/liber-monitor)
 
 ## Licencia
 GPL v3 - Usa, modifica, comparte libremente.
