@@ -60,10 +60,10 @@ def plot_training_dynamics(history: List[Dict],
     
     setup_matplotlib()
     
-    epochs = [h["epoch"] for h in history]
-    L_values = [h["L_promedio"] for h in history]
-    regimes = [h["regime_promedio"] for h in history]
-    entropias = [h["entropia_promedio"] for h in history]
+    epochs = [h.epoch for h in history]
+    L_values = [h.L_promedio for h in history]
+    regimes = [h.regime_promedio for h in history]
+    entropias = [h.entropia_promedio for h in history]
     
     # Configurar subplot grid
     n_rows = 3 if (loss_train and loss_val) else 2
@@ -101,8 +101,8 @@ def plot_training_dynamics(history: List[Dict],
     
     regime_counts = {}
     for h in history:
-        for layer in h.get("layers", []):
-            reg = layer["regime"]
+        for layer in h.layers:
+            reg = layer.regime
             regime_counts[reg] = regime_counts.get(reg, 0) + 1
     
     if regime_counts:
@@ -124,19 +124,19 @@ def plot_training_dynamics(history: List[Dict],
     # ========================================================================
     # PLOT 3: L POR CAPA INDIVIDUAL (si está disponible)
     # ========================================================================
-    if show_layers and history[0].get("layers"):
+    if show_layers and history[0].layers:
         ax3 = fig.add_subplot(gs[1, 0])
         
         # Extraer L por capa a través del tiempo
-        layer_names = [layer["layer_name"] for layer in history[0]["layers"]]
+        layer_names = [layer.layer_name for layer in history[0].layers]
         layer_colors = plt.cm.tab10(np.linspace(0, 1, len(layer_names)))
         
         for i, layer_name in enumerate(layer_names):
             L_layer = []
             for h in history:
-                for layer in h["layers"]:
-                    if layer["layer_name"] == layer_name:
-                        L_layer.append(layer["L"])
+                for layer in h.layers:
+                    if layer.layer_name == layer_name:
+                        L_layer.append(layer.L)
                         break
             
             if L_layer:
@@ -338,15 +338,15 @@ def export_report(history: List[Dict],
             "timestamp": str(np.datetime64('now'))
         },
         "final_state": {
-            "L_promedio": history[-1]["L_promedio"],
-            "regime": history[-1]["regime_promedio"],
-            "entropia_promedio": history[-1]["entropia_promedio"],
-            "rango_promedio": history[-1]["rango_promedio"]
+            "L_promedio": history[-1].L_promedio,
+            "regime": history[-1].regime_promedio,
+            "entropia_promedio": history[-1].entropia_promedio,
+            "rango_promedio": history[-1].rango_promedio
         },
         "statistics": {
-            "L_inicial": history[0]["L_promedio"],
-            "L_minimo": min(h["L_promedio"] for h in history),
-            "L_maximo": max(h["L_promedio"] for h in history),
+            "L_inicial": history[0].L_promedio,
+            "L_minimo": min(h.L_promedio for h in history),
+            "L_maximo": max(h.L_promedio for h in history),
             "L_cambio_porcentual": None
         },
         "regime_distribution": {},
@@ -358,19 +358,19 @@ def export_report(history: List[Dict],
     }
     
     # Calcular cambio porcentual
-    L_inicial = history[0]["L_promedio"]
-    L_final = history[-1]["L_promedio"]
+    L_inicial = history[0].L_promedio
+    L_final = history[-1].L_promedio
     if L_inicial != 0:
         cambio = ((L_final - L_inicial) / L_inicial) * 100
         report["statistics"]["L_cambio_porcentual"] = round(cambio, 2)
     
     # Distribución de regímenes
     for h in history:
-        regime = h["regime_promedio"]
+        regime = h.regime_promedio
         report["regime_distribution"][regime] = report["regime_distribution"].get(regime, 0) + 1
     
     # Análisis de tendencias y recomendaciones
-    recent_L = [h["L_promedio"] for h in history[-3:]]
+    recent_L = [h.L_promedio for h in history[-3:]]
     
     if len(recent_L) == 3 and all(L < 0.5 for L in recent_L):
         report["recommendations"]["early_stopping"] = True
@@ -402,8 +402,8 @@ def export_report(history: List[Dict],
         report["layer_details"] = []
         for h in history[-3:]:  # Últimas 3 épocas
             epoch_layers = {
-                "epoch": h["epoch"],
-                "layers": [layer for layer in h.get("layers", [])]
+                "epoch": h.epoch,
+                "layers": [layer.to_dict() for layer in h.layers]
             }
             report["layer_details"].append(epoch_layers)
     
@@ -417,7 +417,7 @@ def export_report(history: List[Dict],
     print(f"📄 Reporte exportado a {save_path}")
     return report
 
-def detect_collapse_epoch(history: List[Dict], threshold: float = 0.5) -> Optional[int]:
+def detect_collapse_epoch(history: List[object], threshold: float = 0.5) -> Optional[int]:
     """
     Detecta la primera época donde se observó colapso (L < threshold)
     
@@ -425,11 +425,11 @@ def detect_collapse_epoch(history: List[Dict], threshold: float = 0.5) -> Option
         int: Época del colapso, o None si no hubo colapso
     """
     for h in history:
-        if h["L_promedio"] < threshold:
-            return h["epoch"]
+        if h.L_promedio < threshold:
+            return h.epoch
     return None
 
-def calculate_trend(history: List[Dict], window: int = 3) -> str:
+def calculate_trend(history: List[object], window: int = 3) -> str:
     """
     Calcula la tendencia de L en las últimas `window` épocas
     
@@ -439,7 +439,7 @@ def calculate_trend(history: List[Dict], window: int = 3) -> str:
     if len(history) < window:
         return "insufficient_data"
     
-    recent_L = [h["L_promedio"] for h in history[-window:]]
+    recent_L = [h.L_promedio for h in history[-window:]]
     
     # Calcular pendiente simple
     epochs = list(range(window))
@@ -487,7 +487,7 @@ def summary_table(history: List[Dict],
     
     # Filas
     for i, h in enumerate(history[:n_epochs]):
-        row = f"{h['epoch']:<4} {h['L_promedio']:<7.3f} {h['regime_promedio']:<12} {h['entropia_promedio']:<7.3f}"
+        row = f"{h.epoch:<4} {h.L_promedio:<7.3f} {h.regime_promedio:<12} {h.entropia_promedio:<7.3f}"
         
         if loss_train and i < len(loss_train):
             row += f" {loss_train[i]:<8.4f}"
@@ -500,8 +500,8 @@ def summary_table(history: List[Dict],
     table += "-"*80 + "\n"
     
     # Estadísticas finales
-    L_inicial = history[0]["L_promedio"]
-    L_final = history[-1]["L_promedio"]
+    L_inicial = history[0].L_promedio
+    L_final = history[-1].L_promedio
     cambio = ((L_final - L_inicial) / L_inicial) * 100 if L_inicial != 0 else 0
     
     table += f"L inicial: {L_inicial:.3f} | L final: {L_final:.3f} | Cambio: {cambio:+.1f}%\n"
