@@ -98,7 +98,7 @@ def run():
         L_max = max(L_max, L)
         
         if epoch % 5 == 0 or epoch == 24:
-            print(f"Ep {epoch:2d} | Val Loss: {val_loss:.4f} | Acc: {accuracy:.1f}% | L: {L:.3f} | {monitor.regime(L)}")
+            print(f"Ep {epoch:2d} | Val Loss: {val_loss:.4f} | Acc: {accuracy:.1f}% | L: {L:.3f} | {monitor.evaluar_regimen(L)}")
     
     print("\n" + "="*60)
     print("🏁 RESULTADO FINAL")
