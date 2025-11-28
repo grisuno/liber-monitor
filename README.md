@@ -60,6 +60,8 @@ Demo: [https://huggingface.co/spaces/grisun0/liber-monitor-demo](https://hugging
 Born from a weekend physics experiment. 
 Let's see if it's useful or just a fancy paperweight.
 
+pd: The monitor is not recommended for use with optimizers that enforce gradient orthogonality (e.g., Muon), as this reduces or nullifies its predictive power.
+
 #MachineLearning #OpenSource
 
 [ES]
