@@ -195,6 +195,8 @@ export_report(monitor.history, "my_model", "report.json")
 
 Corre `python examples/quick_demo.py` para veer la salida simulada. El entrenamiento real muestra el mismo patrón.
 
+PD: El monitor no se recomienda para su uso con optimizadores que fuerzan la ortogonalidad del gradiente (ej. Muon), ya que esto reduce o anula su poder predictivo.
+
 ## Links
 
 - [https://test.pypi.org/project/liber-monitor/](https://test.pypi.org/project/liber-monitor/)
