@@ -11,7 +11,7 @@
 
 **Total Files Parsed:** 9 | **Total Symbols Extracted:** 41 | **Total Imports:** 61
 
-<!-- ranking_model: v1.0 | weights: {ppr:0.45,auth:0.2,test:0.15,doc:0.1,fresh:0.1} | alpha:0.85 | commit:1e0fd0b | date:2026-07-18 -->
+<!-- ranking_model: v1.0 | weights: {ppr:0.45,auth:0.2,test:0.15,doc:0.1,fresh:0.1} | alpha:0.85 | commit:05a4468 | date:2026-07-18 -->
 
 
 ## Table of Contents
@@ -24,13 +24,12 @@
 6. [Hotspot Analysis](#hotspot-analysis)
 7. [Change Impact Analysis](#change-impact-analysis)
 8. [Suggested Linting Rules](#suggested-linting-rules)
-9. [Concept Graph](#concept-graph)
-10. [Orphans](#orphans)
-11. [Query Recipes](#query-recipes)
-12. [Structural Knowledge Map](#structural-knowledge-map)
-13. [UML Class Diagram](#uml-class-diagram)
-14. [Code Property Graph](#code-property-graph)
-15. [Architecture Reference](#architecture-reference)
+9. [Orphans](#orphans)
+10. [Query Recipes](#query-recipes)
+11. [Structural Knowledge Map](#structural-knowledge-map)
+12. [UML Class Diagram](#uml-class-diagram)
+13. [Code Property Graph](#code-property-graph)
+14. [Architecture Reference](#architecture-reference)
     - [PY (8 files)](#py-8-files)
     - [SH (1 files)](#sh-1-files)
 
@@ -70,18 +69,22 @@ Auto-detected from path patterns, naming conventions, and imported frameworks.
 
 | Layer | Files |
 |-------|-------|
-| utility | 6 |
+| utility | 5 |
 | testing | 2 |
+| presentation | 1 |
 | infrastructure | 1 |
 
 ### utility
 
 - `app.py` (py, 6 symbols)
-- `quick_demo.py` (py, 0 symbols)
 - `01_ultra_fast.py` (py, 4 symbols)
 - `02_complete_mnist.py` (py, 4 symbols)
 - `03_forced_collapse.py` (py, 7 symbols)
 - `install.sh` (sh, 0 symbols)
+
+### presentation
+
+- `quick_demo.py` (py, 0 symbols)
 
 ### infrastructure
 
@@ -157,60 +160,6 @@ Files ranked by combined complexity (symbol count) and centrality (connection co
 | `01_ultra_fast.py` | 0.308 | 0.438 | 0.386 | 4 | 7 |
 | `02_complete_mnist.py` | 0.308 | 0.438 | 0.386 | 4 | 7 |
 | `install.sh` | 0.000 | 0.000 | 0.000 | 0 | 0 |
-
----
-
-## Concept Graph
-
-Semantic second-brain layer: nouns are concept nodes, verbs are edges. Each noun maps atomically to a file set (EXTRACTED); each verb aggregates structural imports, calls, and inherits into consumes, invokes, extends, depends_on, or bridges (INFERRED).
-
-**50 concepts, 0 relations.**
-
-| Concept | Files | Mentions |
-|---------|-------|----------|
-| `que` | 5 | 11 |
-| `entrenamiento` | 5 | 6 |
-| `monitor` | 4 | 12 |
-| `completo` | 4 | 11 |
-| `colapso` | 4 | 10 |
-| `experimento` | 4 | 10 |
-| `ultra` | 4 | 8 |
-| `forward` | 4 | 6 |
-| `modelo` | 4 | 5 |
-| `pido` | 4 | 5 |
-| `pocas` | 4 | 5 |
-| `antes` | 4 | 4 |
-| `formato` | 4 | 4 |
-| `valida` | 4 | 4 |
-| `experimentos` | 3 | 8 |
-| `loss` | 3 | 8 |
-| `mnist` | 3 | 7 |
-| `con` | 3 | 6 |
-| `val` | 3 | 6 |
-| `collapse` | 3 | 5 |
-| `forced` | 3 | 4 |
-| `install` | 3 | 4 |
-| `experiments` | 3 | 3 |
-| `falsos` | 3 | 3 |
-| `liber` | 3 | 3 |
-| `normal` | 3 | 3 |
-| `positivos` | 3 | 3 |
-| `para` | 2 | 10 |
-| `integration` | 2 | 7 |
-| `replica` | 2 | 7 |
-
-### Dialectic Prompts
-
-- Thesis: `antes` centralizes 4 files; Antithesis: `anticipaci` pulls 2 files with 2 shared (Jaccard 0.50); Synthesis: should they merge, split by layer, or keep `bridges` explicit?
-- Thesis: `antes` centralizes 4 files; Antithesis: `capa` pulls 2 files with 2 shared (Jaccard 0.50); Synthesis: should they merge, split by layer, or keep `bridges` explicit?
-- Thesis: `antes` centralizes 4 files; Antithesis: `colapso` pulls 4 files with 4 shared (Jaccard 1.00); Synthesis: should they merge, split by layer, or keep `bridges` explicit?
-- Thesis: `antes` centralizes 4 files; Antithesis: `collapse` pulls 3 files with 3 shared (Jaccard 0.75); Synthesis: should they merge, split by layer, or keep `bridges` explicit?
-- Thesis: `antes` centralizes 4 files; Antithesis: `completo` pulls 4 files with 3 shared (Jaccard 0.60); Synthesis: should they merge, split by layer, or keep `bridges` explicit?
-- Thesis: `antes` centralizes 4 files; Antithesis: `con` pulls 3 files with 2 shared (Jaccard 0.40); Synthesis: should they merge, split by layer, or keep `bridges` explicit?
-- Thesis: `antes` centralizes 4 files; Antithesis: `condiciones` pulls 2 files with 2 shared (Jaccard 0.50); Synthesis: should they merge, split by layer, or keep `bridges` explicit?
-- Thesis: `antes` centralizes 4 files; Antithesis: `detecta` pulls 2 files with 2 shared (Jaccard 0.50); Synthesis: should they merge, split by layer, or keep `bridges` explicit?
-- Thesis: `antes` centralizes 4 files; Antithesis: `early` pulls 2 files with 2 shared (Jaccard 0.50); Synthesis: should they merge, split by layer, or keep `bridges` explicit?
-- Thesis: `antes` centralizes 4 files; Antithesis: `entrenamiento` pulls 5 files with 3 shared (Jaccard 0.50); Synthesis: should they merge, split by layer, or keep `bridges` explicit?
 
 ---
 

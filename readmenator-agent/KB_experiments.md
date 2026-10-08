@@ -1,8 +1,8 @@
 # Subsystem: experiments
 
 ## experiments/01_ultra_fast.py
-- Doc: EXPERIMENTO 01 - ULTRA-RÁPIDO
 - Layer: utility
+- Doc: EXPERIMENTO 01 - ULTRA-RÁPIDO ============================== Replicación exacta de tu Experimento Ultra-Rápido. Valida q
 - Language: py
 - Symbols:
   - `ModeloMNISTPequeno` (class, line 20) `class ModeloMNISTPequeno(Module)`
@@ -11,8 +11,8 @@
   - `forward` (method, line 30) `def forward(self, x)`
 
 ## experiments/02_complete_mnist.py
-- Doc: EXPERIMENTO 02 - MNIST COMPLETO
 - Layer: utility
+- Doc: EXPERIMENTO 02 - MNIST COMPLETO ============================== Replicación exacta de tu Experimento Completo MNIST. Vali
 - Language: py
 - Symbols:
   - `CNNMNIST` (class, line 19) `class CNNMNIST(Module)`
@@ -21,8 +21,8 @@
   - `forward` (method, line 30) `def forward(self, x)`
 
 ## experiments/03_forced_collapse.py
-- Doc: liber-monitor/utils.py v2.0.0
 - Layer: utility
+- Doc: liber-monitor/utils.py v2.0.0 ============================== Herramientas de visualización, validación y exportación Con
 - Language: py
 - Symbols:
   - `setup_matplotlib` (function, line 15) `def setup_matplotlib()`

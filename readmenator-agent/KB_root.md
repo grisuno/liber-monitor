@@ -1,8 +1,8 @@
 # Subsystem: root
 
 ## app.py
-- Doc: Autor: Gris Iscomeback Correo electrónico: grisun0[at]proton[dot]me Fecha de creación...
 - Layer: utility
+- Doc: app.py  Autor: Gris Iscomeback Correo electrónico: grisun0[at]proton[dot]me Fecha de creación: 22/11/2025 Licencia: GPL 
 - Language: py
 - Symbols:
   - `SimpleNet` (class, line 23) `class SimpleNet(Module)`
@@ -18,4 +18,5 @@
 
 ## setup.py
 - Layer: infrastructure
+- Doc: setup.py v1.0.0 ================ Instalador profesional para liber-monitor. Formato estándar pip install compatible.
 - Language: py

@@ -1,8 +1,8 @@
 # Subsystem: tests
 
 ## tests/test_integration.py
-- Doc: tests/test_integration.py v1.0.0
 - Layer: testing
+- Doc: tests/test_integration.py v1.0.0 ================================== Tests de integración completa que replican tus exper
 - Language: py
 - Symbols:
   - `test_integration_ultra_fast_experiment` (function, line 16) `def test_integration_ultra_fast_experiment()`
@@ -20,8 +20,8 @@
   - `forward` (method, line 197) `def forward(self, x)`
 
 ## tests/test_monitor.py
-- Doc: tests/test_monitor.py v1.0.0
 - Layer: testing
+- Doc: tests/test_monitor.py v1.0.0 ============================ Tests basados en tus 3 experimentos validados. Reproducen cond
 - Language: py
 - Symbols:
   - `test_sovereignty_monitor_prediction` (function, line 17) `def test_sovereignty_monitor_prediction()`
