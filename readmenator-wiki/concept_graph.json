@@ -1,0 +1,510 @@
+{
+  "concepts": [
+    {
+      "name": "que",
+      "files": [
+        "experiments/01_ultra_fast.py",
+        "experiments/02_complete_mnist.py",
+        "experiments/03_forced_collapse.py",
+        "tests/test_integration.py",
+        "tests/test_monitor.py"
+      ],
+      "mentions": 11,
+      "confidence": "EXTRACTED"
+    },
+    {
+      "name": "entrenamiento",
+      "files": [
+        "app.py",
+        "experiments/02_complete_mnist.py",
+        "experiments/03_forced_collapse.py",
+        "tests/test_integration.py",
+        "tests/test_monitor.py"
+      ],
+      "mentions": 6,
+      "confidence": "EXTRACTED"
+    },
+    {
+      "name": "monitor",
+      "files": [
+        "experiments/03_forced_collapse.py",
+        "setup.py",
+        "tests/test_integration.py",
+        "tests/test_monitor.py"
+      ],
+      "mentions": 12,
+      "confidence": "EXTRACTED"
+    },
+    {
+      "name": "completo",
+      "files": [
+        "experiments/02_complete_mnist.py",
+        "experiments/03_forced_collapse.py",
+        "tests/test_integration.py",
+        "tests/test_monitor.py"
+      ],
+      "mentions": 11,
+      "confidence": "EXTRACTED"
+    },
+    {
+      "name": "colapso",
+      "files": [
+        "experiments/01_ultra_fast.py",
+        "experiments/03_forced_collapse.py",
+        "tests/test_integration.py",
+        "tests/test_monitor.py"
+      ],
+      "mentions": 10,
+      "confidence": "EXTRACTED"
+    },
+    {
+      "name": "experimento",
+      "files": [
+        "experiments/01_ultra_fast.py",
+        "experiments/02_complete_mnist.py",
+        "tests/test_integration.py",
+        "tests/test_monitor.py"
+      ],
+      "mentions": 10,
+      "confidence": "EXTRACTED"
+    },
+    {
+      "name": "ultra",
+      "files": [
+        "experiments/01_ultra_fast.py",
+        "experiments/03_forced_collapse.py",
+        "tests/test_integration.py",
+        "tests/test_monitor.py"
+      ],
+      "mentions": 8,
+      "confidence": "EXTRACTED"
+    },
+    {
+      "name": "forward",
+      "files": [
+        "app.py",
+        "experiments/01_ultra_fast.py",
+        "experiments/02_complete_mnist.py",
+        "tests/test_integration.py"
+      ],
+      "mentions": 6,
+      "confidence": "EXTRACTED"
+    },
+    {
+      "name": "modelo",
+      "files": [
+        "experiments/01_ultra_fast.py",
+        "experiments/03_forced_collapse.py",
+        "tests/test_integration.py",
+        "tests/test_monitor.py"
+      ],
+      "mentions": 5,
+      "confidence": "EXTRACTED"
+    },
+    {
+      "name": "pido",
+      "files": [
+        "experiments/01_ultra_fast.py",
+        "experiments/03_forced_collapse.py",
+        "tests/test_integration.py",
+        "tests/test_monitor.py"
+      ],
+      "mentions": 5,
+      "confidence": "EXTRACTED"
+    },
+    {
+      "name": "pocas",
+      "files": [
+        "experiments/01_ultra_fast.py",
+        "experiments/03_forced_collapse.py",
+        "tests/test_integration.py",
+        "tests/test_monitor.py"
+      ],
+      "mentions": 5,
+      "confidence": "EXTRACTED"
+    },
+    {
+      "name": "antes",
+      "files": [
+        "experiments/01_ultra_fast.py",
+        "experiments/03_forced_collapse.py",
+        "tests/test_integration.py",
+        "tests/test_monitor.py"
+      ],
+      "mentions": 4,
+      "confidence": "EXTRACTED"
+    },
+    {
+      "name": "formato",
+      "files": [
+        "app.py",
+        "experiments/03_forced_collapse.py",
+        "setup.py",
+        "tests/test_integration.py"
+      ],
+      "mentions": 4,
+      "confidence": "EXTRACTED"
+    },
+    {
+      "name": "valida",
+      "files": [
+        "experiments/01_ultra_fast.py",
+        "experiments/02_complete_mnist.py",
+        "experiments/03_forced_collapse.py",
+        "tests/test_integration.py"
+      ],
+      "mentions": 4,
+      "confidence": "EXTRACTED"
+    },
+    {
+      "name": "experimentos",
+      "files": [
+        "experiments/03_forced_collapse.py",
+        "tests/test_integration.py",
+        "tests/test_monitor.py"
+      ],
+      "mentions": 8,
+      "confidence": "EXTRACTED"
+    },
+    {
+      "name": "loss",
+      "files": [
+        "experiments/01_ultra_fast.py",
+        "experiments/03_forced_collapse.py",
+        "tests/test_monitor.py"
+      ],
+      "mentions": 8,
+      "confidence": "EXTRACTED"
+    },
+    {
+      "name": "mnist",
+      "files": [
+        "experiments/02_complete_mnist.py",
+        "tests/test_integration.py",
+        "tests/test_monitor.py"
+      ],
+      "mentions": 7,
+      "confidence": "EXTRACTED"
+    },
+    {
+      "name": "con",
+      "files": [
+        "app.py",
+        "experiments/03_forced_collapse.py",
+        "tests/test_monitor.py"
+      ],
+      "mentions": 6,
+      "confidence": "EXTRACTED"
+    },
+    {
+      "name": "val",
+      "files": [
+        "experiments/01_ultra_fast.py",
+        "experiments/03_forced_collapse.py",
+        "tests/test_monitor.py"
+      ],
+      "mentions": 6,
+      "confidence": "EXTRACTED"
+    },
+    {
+      "name": "collapse",
+      "files": [
+        "experiments/03_forced_collapse.py",
+        "tests/test_integration.py",
+        "tests/test_monitor.py"
+      ],
+      "mentions": 5,
+      "confidence": "EXTRACTED"
+    },
+    {
+      "name": "forced",
+      "files": [
+        "experiments/03_forced_collapse.py",
+        "tests/test_integration.py",
+        "tests/test_monitor.py"
+      ],
+      "mentions": 4,
+      "confidence": "EXTRACTED"
+    },
+    {
+      "name": "install",
+      "files": [
+        "install.sh",
+        "setup.py",
+        "tests/test_integration.py"
+      ],
+      "mentions": 4,
+      "confidence": "EXTRACTED"
+    },
+    {
+      "name": "experiments",
+      "files": [
+        "experiments/01_ultra_fast.py",
+        "experiments/02_complete_mnist.py",
+        "experiments/03_forced_collapse.py"
+      ],
+      "mentions": 3,
+      "confidence": "EXTRACTED"
+    },
+    {
+      "name": "falsos",
+      "files": [
+        "experiments/02_complete_mnist.py",
+        "tests/test_integration.py",
+        "tests/test_monitor.py"
+      ],
+      "mentions": 3,
+      "confidence": "EXTRACTED"
+    },
+    {
+      "name": "liber",
+      "files": [
+        "experiments/03_forced_collapse.py",
+        "setup.py",
+        "tests/test_integration.py"
+      ],
+      "mentions": 3,
+      "confidence": "EXTRACTED"
+    },
+    {
+      "name": "normal",
+      "files": [
+        "experiments/02_complete_mnist.py",
+        "tests/test_integration.py",
+        "tests/test_monitor.py"
+      ],
+      "mentions": 3,
+      "confidence": "EXTRACTED"
+    },
+    {
+      "name": "positivos",
+      "files": [
+        "experiments/02_complete_mnist.py",
+        "tests/test_integration.py",
+        "tests/test_monitor.py"
+      ],
+      "mentions": 3,
+      "confidence": "EXTRACTED"
+    },
+    {
+      "name": "para",
+      "files": [
+        "experiments/03_forced_collapse.py",
+        "setup.py"
+      ],
+      "mentions": 10,
+      "confidence": "EXTRACTED"
+    },
+    {
+      "name": "integration",
+      "files": [
+        "tests/test_integration.py",
+        "tests/test_monitor.py"
+      ],
+      "mentions": 7,
+      "confidence": "EXTRACTED"
+    },
+    {
+      "name": "replica",
+      "files": [
+        "tests/test_integration.py",
+        "tests/test_monitor.py"
+      ],
+      "mentions": 7,
+      "confidence": "EXTRACTED"
+    },
+    {
+      "name": "setup",
+      "files": [
+        "experiments/03_forced_collapse.py",
+        "setup.py"
+      ],
+      "mentions": 4,
+      "confidence": "EXTRACTED"
+    },
+    {
+      "name": "capa",
+      "files": [
+        "experiments/03_forced_collapse.py",
+        "tests/test_monitor.py"
+      ],
+      "mentions": 3,
+      "confidence": "EXTRACTED"
+    },
+    {
+      "name": "complete",
+      "files": [
+        "experiments/02_complete_mnist.py",
+        "tests/test_integration.py"
+      ],
+      "mentions": 3,
+      "confidence": "EXTRACTED"
+    },
+    {
+      "name": "fast",
+      "files": [
+        "experiments/01_ultra_fast.py",
+        "tests/test_integration.py"
+      ],
+      "mentions": 3,
+      "confidence": "EXTRACTED"
+    },
+    {
+      "name": "fico",
+      "files": [
+        "app.py",
+        "experiments/03_forced_collapse.py"
+      ],
+      "mentions": 3,
+      "confidence": "EXTRACTED"
+    },
+    {
+      "name": "json",
+      "files": [
+        "app.py",
+        "experiments/03_forced_collapse.py"
+      ],
+      "mentions": 3,
+      "confidence": "EXTRACTED"
+    },
+    {
+      "name": "pip",
+      "files": [
+        "setup.py",
+        "tests/test_integration.py"
+      ],
+      "mentions": 3,
+      "confidence": "EXTRACTED"
+    },
+    {
+      "name": "reporte",
+      "files": [
+        "app.py",
+        "experiments/03_forced_collapse.py"
+      ],
+      "mentions": 3,
+      "confidence": "EXTRACTED"
+    },
+    {
+      "name": "simple",
+      "files": [
+        "app.py",
+        "tests/test_monitor.py"
+      ],
+      "mentions": 3,
+      "confidence": "EXTRACTED"
+    },
+    {
+      "name": "anticipaci",
+      "files": [
+        "experiments/03_forced_collapse.py",
+        "tests/test_monitor.py"
+      ],
+      "mentions": 2,
+      "confidence": "EXTRACTED"
+    },
+    {
+      "name": "cnnmnist",
+      "files": [
+        "experiments/02_complete_mnist.py",
+        "tests/test_integration.py"
+      ],
+      "mentions": 2,
+      "confidence": "EXTRACTED"
+    },
+    {
+      "name": "condiciones",
+      "files": [
+        "tests/test_integration.py",
+        "tests/test_monitor.py"
+      ],
+      "mentions": 2,
+      "confidence": "EXTRACTED"
+    },
+    {
+      "name": "detecta",
+      "files": [
+        "experiments/03_forced_collapse.py",
+        "tests/test_monitor.py"
+      ],
+      "mentions": 2,
+      "confidence": "EXTRACTED"
+    },
+    {
+      "name": "early",
+      "files": [
+        "experiments/03_forced_collapse.py",
+        "tests/test_monitor.py"
+      ],
+      "mentions": 2,
+      "confidence": "EXTRACTED"
+    },
+    {
+      "name": "est",
+      "files": [
+        "setup.py",
+        "tests/test_integration.py"
+      ],
+      "mentions": 2,
+      "confidence": "EXTRACTED"
+    },
+    {
+      "name": "exacta",
+      "files": [
+        "experiments/01_ultra_fast.py",
+        "experiments/02_complete_mnist.py"
+      ],
+      "mentions": 2,
+      "confidence": "EXTRACTED"
+    },
+    {
+      "name": "export",
+      "files": [
+        "app.py",
+        "experiments/03_forced_collapse.py"
+      ],
+      "mentions": 2,
+      "confidence": "EXTRACTED"
+    },
+    {
+      "name": "exporta",
+      "files": [
+        "app.py",
+        "experiments/03_forced_collapse.py"
+      ],
+      "mentions": 2,
+      "confidence": "EXTRACTED"
+    },
+    {
+      "name": "forzado",
+      "files": [
+        "tests/test_integration.py",
+        "tests/test_monitor.py"
+      ],
+      "mentions": 2,
+      "confidence": "EXTRACTED"
+    },
+    {
+      "name": "genera",
+      "files": [
+        "experiments/03_forced_collapse.py",
+        "tests/test_integration.py"
+      ],
+      "mentions": 2,
+      "confidence": "EXTRACTED"
+    }
+  ],
+  "relations": [],
+  "dialectic": [
+    "Thesis: `antes` centralizes 4 files; Antithesis: `anticipaci` pulls 2 files with 2 shared (Jaccard 0.50); Synthesis: should they merge, split by layer, or keep `bridges` explicit?",
+    "Thesis: `antes` centralizes 4 files; Antithesis: `capa` pulls 2 files with 2 shared (Jaccard 0.50); Synthesis: should they merge, split by layer, or keep `bridges` explicit?",
+    "Thesis: `antes` centralizes 4 files; Antithesis: `colapso` pulls 4 files with 4 shared (Jaccard 1.00); Synthesis: should they merge, split by layer, or keep `bridges` explicit?",
+    "Thesis: `antes` centralizes 4 files; Antithesis: `collapse` pulls 3 files with 3 shared (Jaccard 0.75); Synthesis: should they merge, split by layer, or keep `bridges` explicit?",
+    "Thesis: `antes` centralizes 4 files; Antithesis: `completo` pulls 4 files with 3 shared (Jaccard 0.60); Synthesis: should they merge, split by layer, or keep `bridges` explicit?",
+    "Thesis: `antes` centralizes 4 files; Antithesis: `con` pulls 3 files with 2 shared (Jaccard 0.40); Synthesis: should they merge, split by layer, or keep `bridges` explicit?",
+    "Thesis: `antes` centralizes 4 files; Antithesis: `condiciones` pulls 2 files with 2 shared (Jaccard 0.50); Synthesis: should they merge, split by layer, or keep `bridges` explicit?",
+    "Thesis: `antes` centralizes 4 files; Antithesis: `detecta` pulls 2 files with 2 shared (Jaccard 0.50); Synthesis: should they merge, split by layer, or keep `bridges` explicit?",
+    "Thesis: `antes` centralizes 4 files; Antithesis: `early` pulls 2 files with 2 shared (Jaccard 0.50); Synthesis: should they merge, split by layer, or keep `bridges` explicit?",
+    "Thesis: `antes` centralizes 4 files; Antithesis: `entrenamiento` pulls 5 files with 3 shared (Jaccard 0.50); Synthesis: should they merge, split by layer, or keep `bridges` explicit?"
+  ]
+}
